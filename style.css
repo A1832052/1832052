@@ -1,0 +1,262 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+body
+{
+    background-color: #fff;
+}
+.home{
+    background-image: url(./images/外観.jpg);
+    background-size:cover;
+    min-height: 200vh;
+}
+/* メニューバー
+-------------------------------*/
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 50px;
+    z-index: 100000;
+}
+.header.sticky
+{
+    padding: 5px 100px;
+    background: #fff;
+    z-index: 100000;
+
+}
+.header .logo {
+    position: relative;
+    text-decoration: none;
+    transition: 0.6s;
+}
+.header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header ul li
+{
+    position: relative;
+    list-style: none;
+    margin: 0 10px;
+}
+.header ul li a
+{
+    position: relative;
+    padding-bottom: 3px;
+    text-decoration: none;
+    color:#000;
+    letter-spacing: 2px;
+    font-weight: 900px;
+    transition: 0.6s;
+}
+.header ul li a::after
+{
+    content: '';
+    width: 0;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid#000;
+    display: block;
+}
+.header ul li a:hover::after
+{
+    width:100%;
+    border-bottom: 3px solid#000;
+}
+.header.sticky .logo,
+.header.sticky ul li a
+{
+    color: #000;
+    z-index: 10000;
+}
+
+/* TOP
+--------------------------*/
+
+.top-content
+{
+    position: fixed;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.top-content p 
+{
+    font-size: 1.125rem;
+    margin: 20px 0 50px;
+    letter-spacing: 2px;
+}
+.title
+{
+    font-size: 3rem;
+    font-family: 'Poppins',serif;
+    
+}
+
+/* Topページのボタン
+---------------------------*/
+
+.button
+{
+    font-size: 1.35rem;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+.button:hover
+{
+    opacity: 0.5;
+}
+
+/*ページ上部の見出し
+-------------------------------*/
+.page-title{
+    font-size: 3rem;
+    font-family: 'Philosopher',serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 125px;
+    color: #000;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    background-image: url(./images/野菜.jpg);
+    background-size: cover;
+    width: 100%;
+    height:300px;
+
+}
+.time{
+    position: absolute;
+    top: 0;
+    background-image: url(./images/時間.jpg);
+    background-size: cover;
+    width: 100%;
+    height:300px;
+
+}
+.method{
+    position: absolute;
+    top: 0;
+    background-image: url(./images/湖.jpg);
+    background-size: cover;
+    width: 100%;
+    height:300px;
+
+}
+
+/*アコーディオンの表示
+----------------------------------*/
+.menu-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.column{
+    margin: 0 0 0 25%;
+    text-align: center;
+}
+.column h4{
+    margin-bottom: 10px;
+}
+#accordion{
+    margin-top: 350px;
+}
+
+/*タブの表示
+------------------------------------*/
+#tabs{
+    margin-top: 350px;
+}
+#tabs-1, #tabs-2, #tabs-3,
+#tabs-4, #tabs-5, #tabs-6, #tabs-7{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tab-sub {
+    text-align: center;
+}
+.tab-sub h3{
+    font-size: 1.75rem;
+    margin: 0 0 20px;
+    letter-spacing: 2px;
+}
+.tab-sub p{
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+/*営業時間表示
+------------------------------*/
+.time-content{
+    margin: 300px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.time-content h3{
+    font-size: 1.75rem;
+    margin: 50px 0 20px;
+    letter-spacing: 2px;
+}
+
+/*スマホ版
+----------------------------------*/
+@media (max-width: 666px){
+    .header{
+        flex-direction: column;
+        padding: 40px 40px;
+    }
+    .header ul li a{
+        font-size: 0.7rem;
+    }
+    #tabs-1, #tabs-2, #tabs-3,
+    #tabs-4, #tabs-5, #tabs-6, #tabs-7{
+        flex-direction: column;
+    }
+    .img-sub{
+        width: 300px;
+        height: auto;
+    }
+    .header.sticky{
+        padding: 5px 40px;
+    }
+    .menu-div{
+        flex-direction: column;
+    }
+    .menu-div h4{
+        font-size: 0.75rem;
+    }
+    .menu-div p{
+        font-size: 0.3rem;
+    }
+    .column{
+        margin: 0;
+    }
+    .column h4{
+        margin-bottom: 4px;
+    }
+}
